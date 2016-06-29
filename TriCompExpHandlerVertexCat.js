@@ -45,20 +45,21 @@ var increase = "increase ".bold();
 var decrease = "decrease ".bold();
 var topVertex = "top vertex ".bold();
 var distance = "distance ".bold();
+var angles = "angles ".bold();
 
 
 
-var Questions = ["Imagine we " + increase + "the base angles by 20%. Will the " + topAngle + "become bigger," +
+var Questions = ["Imagine we " + increase + "the base " + angles + "by 20%. Will the " + topAngle + "become bigger," +
 " smaller, or" +
-" stay the same?", "Imagine we " + decrease + "the base angles by 20%. Will the " + topAngle + "become bigger," +
-" smaller, or stay the same?", "Imagine we " + increase + "the " + distance + "between the two base" +
-" angles by 20%, will the " + topAngle + "become bigger, smaller, or stay the same?", "Imagine we " + decrease +
-"the " + distance + "between the base angles by 20%. Will the " + topAngle + "become bigger, smaller or stay the" +
-" same?", "Imagine we " + increase + "the " + distance + "between the two base angles by 20%. Will" +
+" stay the same?", "Imagine we " + decrease + "the base " + angles + "by 20%. Will the " + topAngle + "become bigger," +
+" smaller, or stay the same?", "Imagine we " + increase + "the " + distance + "between the two base " +
++ angles + "by 20%, will the " + topAngle + "become bigger, smaller, or stay the same?", "Imagine we " + decrease +
+"the " + distance + "between the base " + angles + "by 20%. Will the " + topAngle + "become bigger, smaller or stay" +
+" the same?", "Imagine we " + increase + "the " + distance + "between the two base " + angles + "by 20%. Will" +
 " the " + topVertex + "move upward, downward, or stay at its place?", "Imagine we " + decrease + "the " + distance +
-"between the two base angles by 20%, will the " + topVertex + "move upward, downward, or stay at its place?", "Imagine we " +
-increase + "the base angles by 20%, will the " + topVertex + "move upward, downward, or stay at its place?",
-"Imagine we " + decrease + "the base angles by 20%. Will the " + topVertex + "move upward, downward, or " +
+"between the two base " + angles + "by 20%, will the " + topVertex + "move upward, downward, or stay at its place?", "Imagine we " +
+increase + "the base "  + angles + "by 20%, will the " + topVertex + "move upward, downward, or stay at its place?",
+"Imagine we " + decrease + "the base " + angles + "by 20%. Will the " + topVertex + "move upward, downward, or " +
 "stay at its place?" ];
 
 //Create a Random array of runs for this subject, runs #'s go from 1-10
@@ -204,23 +205,6 @@ function drawTriangle() {
     var triLeftSide = paper.line(TriBaseXStart, TriBaseYPos, TriBaseXStart + TriSideXLengthIn, TriBaseYPos -
         TriSideYLengthUp).attr({strokeWidth: 5, stroke: "black", strokeLinecap: "round"});
 
-    // /** Goes through arrays and asks questions by alternating through the AngleQuestions array and VertexQuestions
-    //  *  array. Simply alternates through both and then restarts. */
-    // function GetQuestions(arrayType) {
-    //     if (QuestionCounter == 4) {
-    //         QuestionCounter = 0;
-    //     }
-    //     document.getElementById("question").innerHTML = arrayType[QuestionCounter];
-    //     // copies the question we are asking into our global setup variable.
-    //     Global_info.setup = 'Question: ' + arrayType[QuestionCounter];
-    // }
-    // if (FlipBank % 2 == 0) {
-    //     GetQuestions(AngleQuestions);
-    // }
-    // else {
-    //     GetQuestions(VertexQuestions);
-    //     QuestionCounter = QuestionCounter + 1;
-    // }
 
     /** Displays a random question. */
     document.getElementById("question").innerHTML = Question;

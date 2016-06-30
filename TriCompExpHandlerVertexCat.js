@@ -53,7 +53,7 @@ var Questions = ["Imagine we " + increase + "the base " + angles + "by 20%. Will
 " smaller, or" +
 " stay the same?", "Imagine we " + decrease + "the base " + angles + "by 20%. Will the " + topAngle + "become bigger," +
 " smaller, or stay the same?", "Imagine we " + increase + "the " + distance + "between the two base " +
-+ angles + "by 20%, will the " + topAngle + "become bigger, smaller, or stay the same?", "Imagine we " + decrease +
+angles + "by 20%, will the " + topAngle + "become bigger, smaller, or stay the same?", "Imagine we " + decrease +
 "the " + distance + "between the base " + angles + "by 20%. Will the " + topAngle + "become bigger, smaller or stay" +
 " the same?", "Imagine we " + increase + "the " + distance + "between the two base " + angles + "by 20%. Will" +
 " the " + topVertex + "move upward, downward, or stay at its place?", "Imagine we " + decrease + "the " + distance +
@@ -217,7 +217,7 @@ function drawTriangle() {
 
     //Putting info into Global Setup
        Global_info.setup = 'Question_' + QuestionType + "_" + Question.slice(11, 22);
-    
+
 
 
     /** Switches to the correct radio buttons. */

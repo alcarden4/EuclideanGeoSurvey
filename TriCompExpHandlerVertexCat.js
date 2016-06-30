@@ -217,8 +217,6 @@ function drawTriangle() {
 
     //Putting info into Global Setup
        Global_info.setup = 'Question_' + QuestionType + "_" + Question.slice(14, 23);
-        
-
 
 
     /** Switches to the correct radio buttons. */

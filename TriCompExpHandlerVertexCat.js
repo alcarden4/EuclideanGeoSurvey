@@ -272,7 +272,7 @@ function drawTriangle() {
 
         }
         if (buttonMarker == true) {
-            Global_info.setup = 'Angle_' + Math.round(AngleOrig * 180 / Math.PI) + '_BaseFactor_' + BaseLengthFactor+'_Question_' + QuestionType + "_" + Question.slice(14, 23);
+            Global_info.setup = 'Angle_' + Math.round(AngleOrig * 180 / Math.PI) + '_BaseFactor_' + BaseLengthFactor+'_Question_' + QuestionType + "_" + Question.slice(14, 22);
             Global_info.userResponse=logInfotemp;
 
             onNext();

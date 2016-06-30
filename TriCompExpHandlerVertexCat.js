@@ -214,9 +214,7 @@ function drawTriangle() {
     else {
         QuestionType = 'angle';
     }
-
-    //Putting info into Global Setup
-       Global_info.setup = 'Question_' + QuestionType + "_" + Question.slice(14, 23);
+    
 
 
     /** Switches to the correct radio buttons. */
@@ -274,7 +272,7 @@ function drawTriangle() {
 
         }
         if (buttonMarker == true) {
-            Global_info.setup = 'Angle_' + Math.round(AngleOrig * 180 / Math.PI) + '_BaseFactor_' + BaseLengthFactor+'_Question_' + QuestionType + "_" + Question.slice(11, 19);
+            Global_info.setup = 'Angle_' + Math.round(AngleOrig * 180 / Math.PI) + '_BaseFactor_' + BaseLengthFactor+'_Question_' + QuestionType + "_" + Question.slice(14, 23);
             Global_info.userResponse=logInfotemp;
 
             onNext();

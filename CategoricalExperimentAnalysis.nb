@@ -1,0 +1,158 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5272,        148]
+NotebookOptionsPosition[      4899,        129]
+NotebookOutlinePosition[      5234,        144]
+CellTagsIndexPosition[      5191,        141]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Analysis of Triangle Completion Categorical experiment", "Title",
+ CellChangeTimes->{{3.668032245900982*^9, 3.668032257167712*^9}, {
+  3.67629943111301*^9, 3.676299436063282*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Loading the data and functions", "Section",
+ CellChangeTimes->{{3.6690446860595007`*^9, 3.6690446949176807`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "SetDirectory", "[", 
+   "\"\</home/uvhart/PostDoc/Development/Geometry/TrianglesCompletion/\
+TriangleCompletionWebServer\>\"", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<ErrorBarPlots`\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LogFilePilot2", "=", 
+   RowBox[{"DeleteCases", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<logPilot2.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
+     RowBox[{"Except", "[", 
+      RowBox[{"{", 
+       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LogFilePilot1", "=", 
+   RowBox[{"DeleteCases", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<logPilot1.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
+     RowBox[{"Except", "[", 
+      RowBox[{"{", 
+       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LogFile", "=", 
+   RowBox[{"DeleteCases", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<log.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
+     RowBox[{"Except", "[", 
+      RowBox[{"{", 
+       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LogFilePos", "=", 
+   RowBox[{"DeleteCases", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<logPos.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
+     RowBox[{"Except", "[", 
+      RowBox[{"{", 
+       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LogFilePos2", "=", 
+   RowBox[{"DeleteCases", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<logPos2.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
+     RowBox[{"Except", "[", 
+      RowBox[{"{", 
+       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LogFileAng", "=", 
+   RowBox[{"DeleteCases", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<logAng.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
+     RowBox[{"Except", "[", 
+      RowBox[{"{", 
+       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"LogFileAng2", "=", 
+   RowBox[{"DeleteCases", "[", 
+    RowBox[{
+     RowBox[{"Import", "[", 
+      RowBox[{"\"\<logAng2.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
+     RowBox[{"Except", "[", 
+      RowBox[{"{", 
+       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
+    "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6680322670651207`*^9, 3.668032277287711*^9}, {
+   3.668033380905622*^9, 3.668033410204214*^9}, {3.668033502174172*^9, 
+   3.668033507034042*^9}, {3.6680335818303547`*^9, 3.668033673808433*^9}, {
+   3.6680337371930647`*^9, 3.668033782686245*^9}, {3.668036699492518*^9, 
+   3.668036909549488*^9}, {3.668036945778254*^9, 3.668036954698804*^9}, 
+   3.668037155598856*^9, {3.6680375685646772`*^9, 3.6680376059624023`*^9}, {
+   3.668037764645529*^9, 3.6680378090953817`*^9}, {3.668386848708955*^9, 
+   3.668386863062046*^9}, {3.668386909940054*^9, 3.668386913590309*^9}, {
+   3.668873305808621*^9, 3.668873306775613*^9}, {3.668873633341527*^9, 
+   3.66887363430387*^9}, {3.668874646425508*^9, 3.6688746662287083`*^9}, 
+   3.668874947131692*^9, {3.668874998180727*^9, 3.668875000063014*^9}, 
+   3.668895146683507*^9, {3.668895586245823*^9, 3.668895606237524*^9}, {
+   3.668896101728304*^9, 3.6688961027572823`*^9}, {3.668900819745759*^9, 
+   3.6689008324860086`*^9}, {3.669738824249247*^9, 3.669738844751987*^9}, {
+   3.66991196381569*^9, 3.6699119822569323`*^9}, {3.67007916766763*^9, 
+   3.67007918695994*^9}, {3.67045759249835*^9, 3.670457609102207*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 1025},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Linux x86 (64-bit) (April 11, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 185, 2, 93, "Title"],
+Cell[CellGroupData[{
+Cell[790, 28, 119, 1, 65, "Section"],
+Cell[912, 31, 3959, 94, 209, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

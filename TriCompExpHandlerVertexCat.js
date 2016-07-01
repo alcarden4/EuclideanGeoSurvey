@@ -62,6 +62,9 @@ increase + "the base "  + angles + "by 20%, will the " + topVertex + "move upwar
 "Imagine we " + decrease + "the base " + angles + "by 20%. Will the " + topVertex + "move upward, downward, or " +
 "stay at its place?" ];
 
+var Answers = ["smaller", "bigger", "stay the same", "stay the same", "stay in the same place", "stay in the same" +
+" place", "stay in the same place", "stay in the same place"];
+
 //Create a Random array of runs for this subject, runs #'s go from 1-10
 RunNumOrder = getRandomArray(_.range(0, Global_info.TotRuns), Global_info.TotRuns);
 
@@ -181,6 +184,8 @@ function drawTriangle() {
     Global_info.QuestionNum = Global_info.angleRunNum;
     /** Question is a string of the actual question */
     var Question = Questions[Math.floor(Global_info.QuestionNum % 8)];
+    /** Answer to the question used for logging */
+    var Answer = Answers[Math.floor(Global_info.QuestionNum % 8)];
 
     var LengthBaseOrig = 600; //Max Base Length
     var TriBaseXStartOrig = 150; //Origin position in the X axis for maximal base length
@@ -214,6 +219,15 @@ function drawTriangle() {
     else {
         QuestionType = 'angle';
     }
+
+    /** Getting what was being manipulated in the question: distance/angle */
+    if (Question.includes("distance")) {
+        var QuestionVariable = "distance";
+    }
+    else {
+        QuestionVariable = "angle";
+    }
+
     
 
 
@@ -229,7 +243,6 @@ function drawTriangle() {
     }
     else {
         angleButton.style.display = '';
-
 
     }
     /** Gets elements within the html id */
@@ -271,8 +284,12 @@ function drawTriangle() {
             }
 
         }
+
+
         if (buttonMarker == true) {
-            Global_info.setup = 'Angle_' + Math.round(AngleOrig * 180 / Math.PI) + '_BaseFactor_' + BaseLengthFactor+'_Question_' + QuestionType + "_" + Question.slice(14, 22);
+            Global_info.setup = 'Angle_' + Math.round(AngleOrig * 180 / Math.PI) + '_BaseFactor_' +
+                BaseLengthFactor+'_Question_' + QuestionType + "_" + Question.slice(14, 22) + "_" + QuestionVariable
+                + "_correctAnswer_" + Answer;
             Global_info.userResponse=logInfotemp;
 
             onNext();
@@ -304,8 +321,9 @@ function submit_demographis() {
     var gender = document.getElementById("gender").options[document.getElementById("gender").selectedIndex].value;
     var RightLeft = document.getElementById("RightLeft").options[document.getElementById("RightLeft").selectedIndex].value;
     var age = document.getElementById("age").value;
+    var education = document.getElementById("education").value;
 
-    if (gender == '' | age == '') {
+    if (gender == '' || age == '' || education == '') {
 //		onContinue.curPage = onContinue.curPage-1;
         return false;
     }
@@ -313,6 +331,7 @@ function submit_demographis() {
         sendRequestPost('gender', gender);
         sendRequestPost('age', age);
         sendRequestPost('RightLeft', RightLeft);
+        sendRequestPost('education', education);
         return true;
     }
 };

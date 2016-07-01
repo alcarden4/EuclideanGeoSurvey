@@ -62,8 +62,7 @@ increase + "the base "  + angles + "by 20%, will the " + topVertex + "move upwar
 "Imagine we " + decrease + "the base " + angles + "by 20%. Will the " + topVertex + "move upward, downward, or " +
 "stay at its place?" ];
 
-var Answers = ["smaller", "bigger", "stay the same", "stay the same", "stay in the same place", "stay in the same" +
-" place", "stay in the same place", "stay in the same place"];
+var Answers = ["smaller", "bigger", "same", "same", "upward", "downward", "upward", "downward"];
 
 //Create a Random array of runs for this subject, runs #'s go from 1-10
 RunNumOrder = getRandomArray(_.range(0, Global_info.TotRuns), Global_info.TotRuns);

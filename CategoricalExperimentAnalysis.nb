@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5272,        148]
-NotebookOptionsPosition[      4899,        129]
-NotebookOutlinePosition[      5234,        144]
-CellTagsIndexPosition[      5191,        141]
+NotebookDataLength[     12196,        368]
+NotebookOptionsPosition[     11335,        333]
+NotebookOutlinePosition[     11700,        349]
+CellTagsIndexPosition[     11657,        346]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,81 +29,30 @@ Cell[CellGroupData[{
 Cell["Loading the data and functions", "Section",
  CellChangeTimes->{{3.6690446860595007`*^9, 3.6690446949176807`*^9}}],
 
-Cell[BoxData[{
+Cell[BoxData[
  RowBox[{
   RowBox[{
-  "SetDirectory", "[", 
-   "\"\</home/uvhart/PostDoc/Development/Geometry/TrianglesCompletion/\
-TriangleCompletionWebServer\>\"", "]"}], ";"}], "\[IndentingNewLine]", 
+  "SetDirectory", "[", "\"\</home/uvhart/GitHubLib/EuclideanGeoSurvey\>\"", 
+   "]"}], ";"}]], "Input",
+ CellChangeTimes->{3.676380272849753*^9}],
+
+Cell[BoxData[
+ RowBox[{"SetDirectory", "[", 
+  "\"\</Users/alcarden4/Desktop/WebstormProjects/EuclideanGeoSurvey\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{3.676380279883855*^9}],
+
+Cell[BoxData[{
  RowBox[{
   RowBox[{"Needs", "[", "\"\<ErrorBarPlots`\>\"", "]"}], 
   ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"LogFilePilot2", "=", 
-   RowBox[{"DeleteCases", "[", 
-    RowBox[{
-     RowBox[{"Import", "[", 
-      RowBox[{"\"\<logPilot2.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
-     RowBox[{"Except", "[", 
-      RowBox[{"{", 
-       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"LogFilePilot1", "=", 
    RowBox[{"DeleteCases", "[", 
     RowBox[{
      RowBox[{"Import", "[", 
-      RowBox[{"\"\<logPilot1.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
-     RowBox[{"Except", "[", 
-      RowBox[{"{", 
-       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"LogFile", "=", 
-   RowBox[{"DeleteCases", "[", 
-    RowBox[{
-     RowBox[{"Import", "[", 
-      RowBox[{"\"\<log.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
-     RowBox[{"Except", "[", 
-      RowBox[{"{", 
-       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"LogFilePos", "=", 
-   RowBox[{"DeleteCases", "[", 
-    RowBox[{
-     RowBox[{"Import", "[", 
-      RowBox[{"\"\<logPos.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
-     RowBox[{"Except", "[", 
-      RowBox[{"{", 
-       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"LogFilePos2", "=", 
-   RowBox[{"DeleteCases", "[", 
-    RowBox[{
-     RowBox[{"Import", "[", 
-      RowBox[{"\"\<logPos2.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
-     RowBox[{"Except", "[", 
-      RowBox[{"{", 
-       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"LogFileAng", "=", 
-   RowBox[{"DeleteCases", "[", 
-    RowBox[{
-     RowBox[{"Import", "[", 
-      RowBox[{"\"\<logAng.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
-     RowBox[{"Except", "[", 
-      RowBox[{"{", 
-       RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"LogFileAng2", "=", 
-   RowBox[{"DeleteCases", "[", 
-    RowBox[{
-     RowBox[{"Import", "[", 
-      RowBox[{"\"\<logAng2.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
+      RowBox[{"\"\<logVertexCat.txt\>\"", ",", "\"\<Table\>\""}], "]"}], ",", 
+     
      RowBox[{"Except", "[", 
       RowBox[{"{", 
        RowBox[{"___", ",", "\"\<ERROR\>\"", ",", "___"}], "}"}], "]"}]}], 
@@ -123,12 +72,268 @@ TriangleCompletionWebServer\>\"", "]"}], ";"}], "\[IndentingNewLine]",
    3.668896101728304*^9, 3.6688961027572823`*^9}, {3.668900819745759*^9, 
    3.6689008324860086`*^9}, {3.669738824249247*^9, 3.669738844751987*^9}, {
    3.66991196381569*^9, 3.6699119822569323`*^9}, {3.67007916766763*^9, 
-   3.67007918695994*^9}, {3.67045759249835*^9, 3.670457609102207*^9}}]
+   3.67007918695994*^9}, {3.67045759249835*^9, 3.670457609102207*^9}, {
+   3.6762997902065983`*^9, 3.6762998527091*^9}, {3.6763801262620077`*^9, 
+   3.6763801316301622`*^9}, {3.676380214564213*^9, 3.6763802758418293`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"LogFilePilot1", ";"}]], "Input",
+ CellChangeTimes->{3.676303210917391*^9}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Data",
+ FontSize->24]], "Subsubsection",
+ CellChangeTimes->{{3.668902351392291*^9, 3.668902357961344*^9}, {
+  3.6697388743541727`*^9, 3.669738875622587*^9}, {3.6762999661394463`*^9, 
+  3.6762999685310383`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"DataUnCln", "=", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"LogFilePilot1", "[", 
+       RowBox[{"[", 
+        RowBox[{";;", ",", 
+         RowBox[{";;", "2"}]}], "]"}], "]"}], ",", 
+      RowBox[{"LogFilePilot1", "[", 
+       RowBox[{"[", 
+        RowBox[{";;", ",", 
+         RowBox[{"6", ";;"}]}], "]"}], "]"}]}], "}"}], "\[Transpose]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DATA", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Join", "[", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", "1", "]"}], "]"}], ",", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Length", "[", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", "2", "]"}], "]"}], "]"}], "==", "1"}], ",", 
+         RowBox[{"StringSplit", "[", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"2", ",", "1"}], "]"}], "]"}], ",", "\"\<_\>\""}], "]"}],
+          ",", 
+         RowBox[{"Join", "[", 
+          RowBox[{
+           RowBox[{"StringSplit", "[", 
+            RowBox[{
+             RowBox[{"#", "[", 
+              RowBox[{"[", 
+               RowBox[{"2", ",", "1"}], "]"}], "]"}], ",", "\"\<_\>\""}], 
+            "]"}], ",", 
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"2", ",", 
+              RowBox[{"2", ";;"}]}], "]"}], "]"}]}], "]"}]}], "]"}]}], "]"}], 
+     "&"}], "/@", "DataUnCln"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DATASort", "=", 
+   RowBox[{"Select", "[", 
+    RowBox[{
+     RowBox[{"GatherBy", "[", 
+      RowBox[{"DATA", ",", 
+       RowBox[{
+        RowBox[{"#", "[", 
+         RowBox[{"[", "3", "]"}], "]"}], "&"}]}], "]"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Length", "@", "#"}], ">", "120"}], "&"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DataClean", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"SortBy", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{
+           RowBox[{"#", "[", 
+            RowBox[{"[", 
+             RowBox[{"{", 
+              RowBox[{"1", ",", "2"}], "}"}], "]"}], "]"}], "&"}]}], "]"}], 
+        "&"}], "@", 
+       RowBox[{"GatherBy", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"Select", "[", 
+           RowBox[{"#", ",", 
+            RowBox[{
+             RowBox[{"StringContainsQ", "[", 
+              RowBox[{
+               RowBox[{"#", "[", 
+                RowBox[{"[", "5", "]"}], "]"}], ",", "\"\<Run\>\""}], "]"}], 
+             "&"}]}], "]"}], "[", 
+          RowBox[{"[", 
+           RowBox[{
+            RowBox[{"2", ";;"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+             "7", ",", "9", ",", "11", ",", "12", ",", "13", ",", "15", ",", 
+              "17", ",", "19"}], "}"}]}], "]"}], "]"}], ",", 
+         RowBox[{
+          RowBox[{"#", "[", 
+           RowBox[{"[", 
+            RowBox[{"{", 
+             RowBox[{"1", ",", "2"}], "}"}], "]"}], "]"}], "&"}]}], "]"}]}], 
+      "&"}], "/@", "DATASort"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"7", "=", "angle"}], ";", " ", 
+    RowBox[{"9", "=", 
+     RowBox[{"base", " ", "factor"}]}], ";", " ", 
+    RowBox[{"11", "=", "Qtype"}], ";", " ", 
+    RowBox[{"12", "=", "Manipulation"}], ";", " ", 
+    RowBox[{"13", "=", 
+     RowBox[{
+      RowBox[{"What", "'"}], "s", " ", "manipulated"}]}], ";", " ", 
+    RowBox[{"15", "=", 
+     RowBox[{"correct", " ", "answer"}]}], ";", " ", 
+    RowBox[{"17", "=", "timing"}], ";", " ", 
+    RowBox[{"19", "=", 
+     RowBox[{"user", " ", "answer"}]}], ";"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DataClnGraded", "=", 
+   RowBox[{"Join", "@@@", 
+    RowBox[{"Map", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Append", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"#", "[", 
+             RowBox[{"[", "6", "]"}], "]"}], "==", 
+            RowBox[{"#", "[", 
+             RowBox[{"[", "8", "]"}], "]"}]}], ",", "1", ",", "0"}], "]"}]}], 
+        "]"}], "&"}], ",", "DataClean", ",", 
+      RowBox[{"{", "3", "}"}]}], "]"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{
+  3.67630045513008*^9, {3.6763013319610786`*^9, 3.6763013320358057`*^9}, {
+   3.676301382638315*^9, 3.676301409344942*^9}, {3.676303166090089*^9, 
+   3.6763031736583557`*^9}, {3.676379861248476*^9, 3.676379887694234*^9}, {
+   3.67637995234748*^9, 3.676380116788672*^9}, {3.676380152536002*^9, 
+   3.6763801953182487`*^9}, {3.676381132320472*^9, 3.6763811698215218`*^9}, {
+   3.676381905562351*^9, 3.67638196421686*^9}, {3.676382003314992*^9, 
+   3.676382006760655*^9}, {3.6763820385203257`*^9, 3.676382159264285*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Percent correct vs. Base length", "Subsection",
+ CellChangeTimes->{{3.676382256278262*^9, 3.676382277605831*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"1", "=", "angle"}], ";", " ", 
+   RowBox[{"2", "=", 
+    RowBox[{"base", " ", "factor"}]}], ";", " ", 
+   RowBox[{"3", "=", "Qtype"}], ";", " ", 
+   RowBox[{"4", "=", "Manipulation"}], ";", " ", 
+   RowBox[{"5", "=", 
+    RowBox[{
+     RowBox[{"What", "'"}], "s", " ", "manipulated"}]}], ";", " ", 
+   RowBox[{"6", "=", 
+    RowBox[{"correct", " ", "answer"}]}], ";", " ", 
+   RowBox[{"7", "=", "timing"}], ";", " ", 
+   RowBox[{"8", "=", 
+    RowBox[{"user", " ", "answer"}]}], ";", " ", 
+   RowBox[{"9", "=", 
+    RowBox[{"correct", "/", "not"}]}]}], "*)"}]], "Input",
+ CellChangeTimes->{{3.676382300897482*^9, 3.676382336603468*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "2"}], "]"}], "]"}], ",", 
+       RowBox[{"Mean", "@", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", 
+          RowBox[{";;", ",", 
+           RowBox[{"-", "1"}]}], "]"}], "]"}]}]}], "}"}], "&"}], "/@", 
+    RowBox[{"GatherBy", "[", 
+     RowBox[{"#", ",", 
+      RowBox[{
+       RowBox[{"#", "[", 
+        RowBox[{"[", 
+         RowBox[{"{", "2", "}"}], "]"}], "]"}], "&"}]}], "]"}]}], "&"}], "/@",
+   "DataClnGraded"}]], "Input",
+ CellChangeTimes->{{3.6763809524226418`*^9, 3.676380953072781*^9}, {
+   3.676381006351269*^9, 3.676381109632972*^9}, 3.676381177681464*^9, {
+   3.676382195645813*^9, 3.676382241234015*^9}, {3.676382346351322*^9, 
+   3.676382495399187*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"0.1\"\>", ",", 
+       FractionBox["3", "8"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"0.25\"\>", ",", 
+       FractionBox["3", "8"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"0.5\"\>", ",", 
+       FractionBox["3", "8"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"0.75\"\>", ",", 
+       FractionBox["3", "8"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"1\"\>", ",", 
+       FractionBox["3", "8"]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\<\"0.1\"\>", ",", 
+       FractionBox["3", "8"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"0.25\"\>", ",", 
+       FractionBox["1", "3"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"0.5\"\>", ",", 
+       FractionBox["1", "4"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"0.75\"\>", ",", 
+       FractionBox["11", "24"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\<\"1\"\>", ",", 
+       FractionBox["5", "24"]}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.676380953548368*^9, 3.676381113411557*^9, 3.6763811786231203`*^9, {
+   3.676381914338603*^9, 3.676381932341992*^9}, 3.676382371532563*^9, 
+   3.6763824996644897`*^9}]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{1920, 1025},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.5 Inherited,
 FrontEndVersion->"10.4 for Linux x86 (64-bit) (April 11, 2016)",
 StyleDefinitions->"Default.nb"
 ]
@@ -144,15 +349,28 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 185, 2, 93, "Title"],
+Cell[580, 22, 185, 2, 139, "Title"],
 Cell[CellGroupData[{
-Cell[790, 28, 119, 1, 65, "Section"],
-Cell[912, 31, 3959, 94, 209, "Input"]
+Cell[790, 28, 119, 1, 96, "Section"],
+Cell[912, 31, 180, 5, 45, "Input"],
+Cell[1095, 38, 180, 4, 45, "Input"],
+Cell[1278, 44, 1797, 32, 75, "Input"],
+Cell[3078, 78, 98, 2, 45, "Input"],
+Cell[CellGroupData[{
+Cell[3201, 84, 234, 4, 62, "Subsubsection"],
+Cell[3438, 90, 4810, 140, 278, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8285, 235, 119, 1, 67, "Subsection"],
+Cell[8407, 238, 689, 18, 75, "Input"],
+Cell[CellGroupData[{
+Cell[9121, 260, 844, 25, 45, "Input"],
+Cell[9968, 287, 1315, 40, 144, "Output"]
+}, Open  ]]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 

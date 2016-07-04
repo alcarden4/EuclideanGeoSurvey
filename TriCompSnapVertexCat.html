@@ -153,17 +153,17 @@
 
     <p>
         Welcome! <br>
-        This study examines how people perceive the changes in the manipulation of two triangle vertices in relation
-        to the thrid vertex. <br>
-        We will be asking how changing the distance between two vertices and how changing their angles affects the
-        third vertex. <br>
-        Please read how the two vertices will be manipulated and select the multiple choice response that accurately
-        reflects what you think will become of the third vertex.
+        This study examines how people judge shape changes in triangles. Specifically, how might changes to the
+        distance between the bottom two corners of a triangle or to their angle sizes affect the third corner?<br>
+
+        <h2> Procedure: </h2>
+        First, read the description indicating a change to the bottom two corners of the triangle that is displayed on the screen.
+        Then, select the multiple choice response that accurately reflects what happens to the third corner as a result.
+        Please try to be accurate as possible and answer the questions to the best of your ability.
+        When you're done with each question, please press the "Continue” button to move to the next question.
         <br>
-        Please try to be accurate and answer to the best of your ability.<br>
-        When you're done with each triangle, please press the "Continue" button. <br>
-        The experiment takes between 45-60 minutes. At the end of the experiment you'll be provided with a user ID
-        code that you should enter back in mTURK.
+        The experiment takes between 45-60 minutes. At the end of the experiment you'll be provided with a user
+        ID code that you should enter back in mTURK. <br>
     </p>
     <p style="color: red">
         Please don't press on the refresh or backwards buttons, since the experiment will begin anew, and your
@@ -189,15 +189,17 @@
     <h2>Explanation Page</h2>
 
     <p>
-        This page is to relay what we mean by increasing/decreasing the distance between two vertices or by
-        increasing/decreasing the two angles. <br>
-        Please click on each button to view how the angles or the distance change. Each manipulation is in reference
-        to the initial triangle shown, so click on "original triangle" after seeing each manipulation to reset.
+        This page illustrates what we mean by increasing/decreasing the distance between the bottom two corners of the
+        triangle  or increasing/decreasing the angle size of the bottom two corners. <br>
+        Please click on each button on the right to view how the distances or the angle sizes change given each type of
+        verbal instruction. Each change is made with reference to the initial triangle shown, so you can toggle between the
+        change and the original triangle by clicking the button multiple times. You will see a variety of initial triangles
+        from which to imagine a change during the course of the experiment.
         <br>
     </p>
 
     <svg id="IncreaseDistanceButton" width="1000" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <g id='Button1' cursor="pointer" onmouseup="increaseDist()">
+        <g id='Button1' cursor="pointer" onmousedown="increaseDist();" onmouseup="originalButton();">
             <rect  x="800" y="20" rx="5" ry="5" width="160" height="30" stroke="black"
                   fill="lightblue"
                   stroke-width="5"></rect>
@@ -207,7 +209,7 @@
     </svg>
 
     <svg id="DecreaseDistanceButton" width="1000" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <g id='Button1' cursor="pointer" onmouseup="decreaseDist()">
+        <g id='Button1' cursor="pointer" onmousedown="decreaseDist();" onmouseup="originalButton();">
             <rect x="800" y="20" rx="5" ry="5" width="160" height="30" stroke="black" fill="lightblue"
                   stroke-width="5"></rect>
             <text x="820" y="40" font-size="13">Decrease Distance</text>
@@ -215,7 +217,7 @@
     </svg>
 
     <svg id="IncreaseAngleButton" width="1000" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <g id='Button1' cursor="pointer" onmouseup="increaseAngle()">
+        <g id='Button1' cursor="pointer" onmousedown="increaseAngle();" onmouseup="originalButton();">
             <rect x="800" y="20" rx="5" ry="5" width="160" height="30" stroke="black" fill="lightblue"
                   stroke-width="5"></rect>
             <text x="820" y="40" font-size="13">Increase Angle</text>
@@ -223,19 +225,13 @@
     </svg>
 
     <svg id="DecreaseAngleButton" width="1000" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <g id='Button1' cursor="pointer" onmouseup="decreaseAngle()">
+        <g id='Button1' cursor="pointer" onmousedown="decreaseAngle();" onmouseup="originalButton();">
             <rect x="800" y="20" rx="5" ry="5" width="160" height="30" stroke="black" fill="lightblue"
                   stroke-width="5"></rect>
             <text x="820" y="40" font-size="13">Decrease Angle</text>
         </g>
     </svg>
-    <svg id="Original Button" width="1000" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <g id='Button1' cursor="pointer" onmouseup="originalButton()">
-            <rect x="800" y="20" rx="5" ry="5" width="160" height="30" stroke="black" fill="lightblue"
-                  stroke-width="5"></rect>
-            <text x="820" y="40" font-size="13">Original Triangle</text>
-        </g>
-    </svg>
+
     <svg id="ContinueButton" width="1000" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
         <g id='Button1' cursor="pointer" onmouseup="ContinueButton()">
             <rect x="800" y="20" rx="5" ry="5" width="160" height="30" stroke="black" fill="lightblue"

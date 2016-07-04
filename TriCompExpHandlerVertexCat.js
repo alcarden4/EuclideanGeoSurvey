@@ -40,27 +40,42 @@ var IncrAng;
 var DecrAng;
 var OrigTri;
 
-var topAngle = "top angle ".bold();
+
 var increase = "increase ".bold();
 var decrease = "decrease ".bold();
-var topVertex = "top vertex ".bold();
+
 var distance = "distance ".bold();
-var angles = "angles ".bold();
 
+var bigger_smaller = " get bigger, get smaller, or stay the same size?".italics();
+var upward_downward = " move up, move down, or stay in the same place?".italics();
+var angleSize = "angles size ".bold();
+var topCorner = "top corner ".bold();
+var Location = "location ".bold(); // added
 
+var Questions = [
+"Imagine we " + increase + "the " + angleSize + "of the bottom two corners by 20%. Will the " + angleSize + "of"
++ " the " + topCorner + bigger_smaller,
 
-var Questions = ["Imagine we " + increase + "the base " + angles + "by 20%. Will the " + topAngle + "become bigger," +
-" smaller, or" +
-" stay the same?", "Imagine we " + decrease + "the base " + angles + "by 20%. Will the " + topAngle + "become bigger," +
-" smaller, or stay the same?", "Imagine we " + increase + "the " + distance + "between the two base " +
-angles + "by 20%, will the " + topAngle + "become bigger, smaller, or stay the same?", "Imagine we " + decrease +
-"the " + distance + "between the base " + angles + "by 20%. Will the " + topAngle + "become bigger, smaller or stay" +
-" the same?", "Imagine we " + increase + "the " + distance + "between the two base " + angles + "by 20%. Will" +
-" the " + topVertex + "move upward, downward, or stay at its place?", "Imagine we " + decrease + "the " + distance +
-"between the two base " + angles + "by 20%, will the " + topVertex + "move upward, downward, or stay at its place?", "Imagine we " +
-increase + "the base "  + angles + "by 20%, will the " + topVertex + "move upward, downward, or stay at its place?",
-    "Imagine we " + decrease + "the base " + angles + "by 20%. Will the " + topVertex + "move upward, downward, or " +
-    "stay at its place?" ];
+"Imagine we " + decrease + "the " + angleSize + "of the bottom two corners by 20%. Will the " + angleSize + "of"
++ " the " + topCorner + bigger_smaller,
+
+"Imagine we " + increase + "the " + distance + "between the bottom two corners by 20%. Will the "
++ angleSize + "of the " + topCorner + bigger_smaller,
+
+"Imagine we " + decrease + "the " + distance + "between the bottom two corners by 20%. Will the " + angleSize
++ "of the " + topCorner + bigger_smaller,
+
+"Imagine we " + increase + "the " + distance + "between the bottom two corners by 20%. Will the " + Location + topCorner
++ upward_downward,
+
+"Imagine we " + decrease + "the " + distance +
+"between the bottom two corners by 20%. Will the " + Location + "of the " + topCorner + upward_downward,
+
+"Imagine we " + increase + "the"  + angleSize + "of the bottom two corners by 20%, will the " + Location + "of" +
+" the " + topCorner + upward_downward,
+
+"Imagine we " + decrease + "the " + angleSize + "of the bottom two corners by 20%. Will the " + Location + "of" +
+" the " + topCorner + upward_downward];
 
 var Answers = ["smaller", "bigger", "same", "same", "upward", "downward", "upward", "downward"];
 
@@ -212,7 +227,7 @@ function drawTriangle() {
 
     /** Displays a random question. */
     document.getElementById("question").innerHTML = Question;
-    if (Question.includes("vertex")) {
+    if (Question.includes("location")) {
         var QuestionType = 'vertex';
     }
     else {

@@ -35,69 +35,69 @@ function initialize_userid(){
 
 
 
-	function outputResponse(loader){
-			// if(loader.xmlDoc.responseXML!=null)
-				// alert("We Got Response\n\n"+loader.doSerialization())
-			// else
-				// alert("Response contains no XML")
+function outputResponse(loader){
+	// if(loader.xmlDoc.responseXML!=null)
+	// alert("We Got Response\n\n"+loader.doSerialization())
+	// else
+	// alert("Response contains no XML")
 
-		}
-		function sendRequestGet(){
-			if(!document.getElementById('sync').checked){
-				dhtmlxAjax.get("php/processVertexCat.php?"+encodeURI(document.getElementById('params').value),outputResponse);
-				alert("Request Sent");
-			}else{
-				var loader = dhtmlxAjax.getSync("php/processVertexCat.php?"+encodeURI(document.getElementById('params').value));
-				alert("Request Sent");
-				outputResponse(loader)
-			}
-		}
-		function sendRequestPost(key,value){
-				 // alert('here')
+}
+function sendRequestGet(){
+	if(!document.getElementById('sync').checked){
+		dhtmlxAjax.get("php/processVertexCat.php?"+encodeURI(document.getElementById('params').value),outputResponse);
+		alert("Request Sent");
+	}else{
+		var loader = dhtmlxAjax.getSync("php/processVertexCat.php?"+encodeURI(document.getElementById('params').value));
+		alert("Request Sent");
+		outputResponse(loader)
+	}
+}
+function sendRequestPost(key,value){
+	// alert('here')
 
-				if (E.userid==-1)
-				{
-					E.userid = initialize_userid()
-					$(".code").text(E.userid);
-				}
+	if (E.userid==-1)
+	{
+		E.userid = initialize_userid()
+		$(".code").text(E.userid);
+	}
 
-/*				if(!window.dhtmlxAjax){
-					window.dhtmlxAjax = {
-						post: function(url, data, callback){
-							return dhx4.ajax.post(url, data, callback);
-						},
-						get: function(url, callback){
-							return dhx4.ajax.get(url, callback);
-						}
-					};
-				}
-*/
+	/*				if(!window.dhtmlxAjax){
+	 window.dhtmlxAjax = {
+	 post: function(url, data, callback){
+	 return dhx4.ajax.post(url, data, callback);
+	 },
+	 get: function(url, callback){
+	 return dhx4.ajax.get(url, callback);
+	 }
+	 };
+	 }
+	 */
 
 //				dhtmlxAjax.post("php/process.php","uid="+E.userid+"&key="+key+"&value="+value,outputResponse);
-				uid =
-				$.ajax({
-					method: "POST",
-				   url: './php/processVertexCat.php',
-				   data: {uid:E.userid, key: key, value:value},
-				   success: function (response) {//response is value returned from php (for your example it's "bye bye"
-				    // alert();
-				   }
-				});
-				// alert(E.userid)
+	uid =
+		$.ajax({
+			method: "POST",
+			url: './php/processVertexCat.php',
+			data: {uid:E.userid, key: key, value:value},
+			success: function (response) {//response is value returned from php (for your example it's "bye bye"
+				// alert();
+			}
+		});
+	// alert(E.userid)
 
-				return E.userid;
-		}
+	return E.userid;
+}
 
-		function sendRequestPostXML(new_gantt){
+function sendRequestPostXML(new_gantt){
 
-				if (E.userid==-1)
-				{
-					E.userid = initialize_userid()
-				}
+	if (E.userid==-1)
+	{
+		E.userid = initialize_userid()
+	}
 
-				dhtmlxAjax.post("php/xml_writer.php","uid="+E.userid+"&gantt="+new_gantt,outputResponse);
+	dhtmlxAjax.post("php/xml_writer.php","uid="+E.userid+"&gantt="+new_gantt,outputResponse);
 
-		}
+}
 
 
 //list membership

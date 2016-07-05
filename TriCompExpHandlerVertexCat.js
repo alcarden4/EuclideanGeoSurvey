@@ -48,7 +48,7 @@ var distance = "distance ".bold();
 
 var bigger_smaller = " get bigger, get smaller, or stay the same size?".italics();
 var upward_downward = " move up, move down, or stay in the same place?".italics();
-var angleSize = "angles size ".bold();
+var angleSize = "angle size ".bold();
 var topCorner = "top corner ".bold();
 var Location = "location ".bold(); // added
 
@@ -65,13 +65,13 @@ var Questions = [
 "Imagine we " + decrease + "the " + distance + "between the bottom two corners by 20%. Will the " + angleSize
 + "of the " + topCorner + bigger_smaller,
 
-"Imagine we " + increase + "the " + distance + "between the bottom two corners by 20%. Will the " + Location + topCorner
-+ upward_downward,
+"Imagine we " + increase + "the " + distance + "between the bottom two corners by 20%. Will the " + Location + "of" +
+" the " + topCorner + upward_downward,
 
 "Imagine we " + decrease + "the " + distance +
 "between the bottom two corners by 20%. Will the " + Location + "of the " + topCorner + upward_downward,
 
-"Imagine we " + increase + "the"  + angleSize + "of the bottom two corners by 20%, will the " + Location + "of" +
+"Imagine we " + increase + "the "  + angleSize + "of the bottom two corners by 20%, will the " + Location + "of" +
 " the " + topCorner + upward_downward,
 
 "Imagine we " + decrease + "the " + angleSize + "of the bottom two corners by 20%. Will the " + Location + "of" +

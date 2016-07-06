@@ -242,6 +242,26 @@ function drawTriangle() {
         QuestionVariable = "angle";
     }
 
+    var ButtonX = TriBaseXEndOrig;
+    var ButtonY = TriBaseYPos + 50;
+    var CounterRect = paper.rect(ButtonX - 20, ButtonY - 540, 120, 30, 5, 5).attr({
+        strokeWidth: 5,
+        stroke: "black", strokeLinecap: "round", fill: "lightblue"
+    });
+    var CounterText = paper.text(ButtonX, ButtonY - 520, "Triangle: " + Global_info.curPage).attr({fontsize: 50});
+    var CounterButton = paper.g(CounterRect, CounterText);
+    //
+    // CounterButton.mouseover(function () {
+    //     this.attr({cursor: 'pointer'});
+    // });
+
+
+    // var groupButton = paper.g(CounterRect, CounterText);
+    // groupButton.mouseover(function () {
+    //     this.attr({cursor: 'pointer'});
+    // });
+
+
 
 
 
@@ -311,6 +331,10 @@ function drawTriangle() {
         else {
             alert('Please select an answer before continuing.');
         }
+
+
+
+
         //Measuring the time it took the subject to solve the last page
         // Global_info.end = Date.now();
         // var timeRound = Global_info.end - Global_info.start;

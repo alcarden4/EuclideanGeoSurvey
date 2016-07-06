@@ -17,7 +17,7 @@ Global_info.TotRuns = 120;
 /** Variable that decides which question to ask next (chooses randomly)  */
 Global_info.QuestionNum = 0;
 
-//Global_info.curPage=0;
+// Global_info.curPage=0;
 
 /** Used to record subject responses */
 Global_info.userResponse = '';
@@ -244,11 +244,11 @@ function drawTriangle() {
 
     var ButtonX = TriBaseXEndOrig;
     var ButtonY = TriBaseYPos + 50;
-    var CounterRect = paper.rect(ButtonX - 20, ButtonY - 540, 120, 30, 5, 5).attr({
+    var CounterRect = paper.rect(ButtonX - 20, ButtonY - 540, 160, 30, 5, 5).attr({
         strokeWidth: 5,
         stroke: "black", strokeLinecap: "round", fill: "lightblue"
     });
-    var CounterText = paper.text(ButtonX, ButtonY - 520, "Triangle: " + Global_info.curPage).attr({fontsize: 50});
+    var CounterText = paper.text(ButtonX, ButtonY - 520, "Triangle: " + (Global_info.curPage + 1)).attr({fontsize: 50});
     var CounterButton = paper.g(CounterRect, CounterText);
     //
     // CounterButton.mouseover(function () {
